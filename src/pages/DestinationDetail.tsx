@@ -1,0 +1,339 @@
+import { useState, useMemo } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { ArrowLeft, MapPin, Star, Clock, Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import BookingModal from "@/components/BookingModal";
+import { destinations } from "@/data/destinations";
+
+const accommodationOptions = [
+  { id: "standard", label: "Standard", multiplier: 1, description: "Comfortable rooms with basic amenities" },
+  { id: "deluxe", label: "Deluxe", multiplier: 1.4, description: "Spacious rooms with premium amenities" },
+  { id: "luxury", label: "Luxury", multiplier: 1.9, description: "Premium suites with exclusive services" },
+];
+
+const daysOptions = [
+  { days: 3, label: "3 Days / 2 Nights" },
+  { days: 5, label: "5 Days / 4 Nights" },
+];
+
+const addonsOptions = [
+  { id: "breakfast", label: "Breakfast", pricePerDay: 200, oneTime: false },
+  { id: "airport", label: "Airport Pickup", price: 500, oneTime: true },
+  { id: "guide", label: "Local Guide", price: 1000, oneTime: true },
+];
+
+const DestinationDetail = () => {
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+  const destination = destinations.find((d) => d.id === id);
+
+  const [selectedDays, setSelectedDays] = useState(3);
+  const [accommodation, setAccommodation] = useState("standard");
+  const [addons, setAddons] = useState<string[]>([]);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
+  const basePricePerDay = destination ? Math.round(destination.price / 5) : 0;
+
+  const totalPrice = useMemo(() => {
+    if (!destination) return 0;
+
+    const accommodationMultiplier = accommodationOptions.find((a) => a.id === accommodation)?.multiplier || 1;
+    const baseTotal = basePricePerDay * selectedDays * accommodationMultiplier;
+
+    const addonsTotal = addons.reduce((sum, addonId) => {
+      const addon = addonsOptions.find((a) => a.id === addonId);
+      if (!addon) return sum;
+      if (addon.oneTime) {
+        return sum + addon.price;
+      }
+      return sum + addon.pricePerDay * selectedDays;
+    }, 0);
+
+    return Math.round(baseTotal + addonsTotal);
+  }, [basePricePerDay, selectedDays, accommodation, addons]);
+
+  const handleAddonToggle = (addonId: string) => {
+    setAddons((prev) =>
+      prev.includes(addonId)
+        ? prev.filter((id) => id !== addonId)
+        : [...prev, addonId]
+    );
+  };
+
+  if (!destination) {
+    return (
+      <main className="min-h-screen bg-background">
+        <Navbar />
+        <div className="pt-24 pb-16 container mx-auto px-4 text-center">
+          <h1 className="font-display text-3xl font-bold text-foreground mb-4">
+            Destination Not Found
+          </h1>
+          <Link to="/destinations">
+            <Button variant="outline">Back to Destinations</Button>
+          </Link>
+        </div>
+        <Footer />
+      </main>
+    );
+  }
+
+  return (
+    <main className="min-h-screen bg-background">
+      <Navbar />
+
+      {/* Hero Image */}
+      <section className="relative h-[50vh] md:h-[60vh]">
+        <img
+          src={destination.image}
+          alt={destination.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
+        
+        {/* Back Button */}
+        <button
+          onClick={() => navigate(-1)}
+          className="absolute top-24 left-4 md:left-8 flex items-center gap-2 px-4 py-2 rounded-full bg-card/80 backdrop-blur-sm text-foreground hover:bg-card transition-colors"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          <span className="text-sm font-medium">Back</span>
+        </button>
+
+        {/* Title Overlay */}
+        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
+          <div className="container mx-auto">
+            <div className="flex items-center gap-2 text-background/80 mb-2">
+              <MapPin className="h-4 w-4" />
+              <span className="text-sm">{destination.subtitle}</span>
+            </div>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-background mb-4">
+              {destination.title}
+            </h1>
+            <div className="flex items-center gap-4 text-background/80">
+              <div className="flex items-center gap-1">
+                <Star className="h-5 w-5 text-sunset fill-sunset" />
+                <span className="font-medium">{destination.rating}</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <Clock className="h-5 w-5" />
+                <span>{destination.duration}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Content */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Left Column - Description & Highlights */}
+            <div className="lg:col-span-2 space-y-8">
+              {/* Description */}
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                  About This Destination
+                </h2>
+                <p className="text-muted-foreground leading-relaxed text-lg">
+                  {destination.description}
+                </p>
+              </div>
+
+              {/* Highlights */}
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                  Trip Highlights
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {destination.highlights.map((highlight, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-3 p-4 bg-muted rounded-xl"
+                    >
+                      <div className="p-2 rounded-full bg-tropical-light">
+                        <Check className="h-4 w-4 text-tropical" />
+                      </div>
+                      <span className="font-medium text-foreground">{highlight}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Customization & Pricing */}
+            <div className="lg:col-span-1">
+              <div className="bg-card rounded-2xl border border-border shadow-lg p-6 sticky top-24">
+                <h3 className="font-display text-xl font-bold text-foreground mb-6">
+                  Customize Your Trip
+                </h3>
+
+                {/* Days Selection */}
+                <div className="mb-6">
+                  <Label className="text-foreground font-semibold mb-3 block">
+                    Select Duration
+                  </Label>
+                  <RadioGroup
+                    value={selectedDays.toString()}
+                    onValueChange={(value) => setSelectedDays(parseInt(value))}
+                    className="space-y-2"
+                  >
+                    {daysOptions.map((option) => (
+                      <div
+                        key={option.days}
+                        className={`flex items-center space-x-3 p-3 rounded-lg border transition-colors cursor-pointer ${
+                          selectedDays === option.days
+                            ? "border-primary bg-ocean-light"
+                            : "border-border hover:border-primary/50"
+                        }`}
+                        onClick={() => setSelectedDays(option.days)}
+                      >
+                        <RadioGroupItem value={option.days.toString()} id={`days-${option.days}`} />
+                        <Label htmlFor={`days-${option.days}`} className="cursor-pointer flex-1">
+                          {option.label}
+                        </Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                </div>
+
+                {/* Accommodation Selection */}
+                <div className="mb-6">
+                  <Label className="text-foreground font-semibold mb-3 block">
+                    Accommodation Type
+                  </Label>
+                  <RadioGroup
+                    value={accommodation}
+                    onValueChange={setAccommodation}
+                    className="space-y-2"
+                  >
+                    {accommodationOptions.map((option) => (
+                      <div
+                        key={option.id}
+                        className={`flex items-start space-x-3 p-3 rounded-lg border transition-colors cursor-pointer ${
+                          accommodation === option.id
+                            ? "border-primary bg-ocean-light"
+                            : "border-border hover:border-primary/50"
+                        }`}
+                        onClick={() => setAccommodation(option.id)}
+                      >
+                        <RadioGroupItem value={option.id} id={option.id} className="mt-0.5" />
+                        <div className="flex-1">
+                          <Label htmlFor={option.id} className="cursor-pointer font-medium">
+                            {option.label}
+                            <span className="text-muted-foreground ml-2 text-sm">
+                              (x{option.multiplier})
+                            </span>
+                          </Label>
+                          <p className="text-xs text-muted-foreground mt-1">
+                            {option.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                </div>
+
+                {/* Add-ons */}
+                <div className="mb-6">
+                  <Label className="text-foreground font-semibold mb-3 block">
+                    Add-ons
+                  </Label>
+                  <div className="space-y-2">
+                    {addonsOptions.map((addon) => (
+                      <div
+                        key={addon.id}
+                        className={`flex items-center space-x-3 p-3 rounded-lg border transition-colors cursor-pointer ${
+                          addons.includes(addon.id)
+                            ? "border-primary bg-ocean-light"
+                            : "border-border hover:border-primary/50"
+                        }`}
+                        onClick={() => handleAddonToggle(addon.id)}
+                      >
+                        <Checkbox
+                          id={addon.id}
+                          checked={addons.includes(addon.id)}
+                          onCheckedChange={() => handleAddonToggle(addon.id)}
+                        />
+                        <Label htmlFor={addon.id} className="cursor-pointer flex-1">
+                          <span className="font-medium">{addon.label}</span>
+                          <span className="text-muted-foreground text-sm ml-2">
+                            (₹{addon.oneTime ? addon.price : `${addon.pricePerDay}/day`})
+                          </span>
+                        </Label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Price Breakdown */}
+                <div className="border-t border-border pt-4 mb-6">
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between text-muted-foreground">
+                      <span>Base price ({selectedDays} days)</span>
+                      <span>₹{(basePricePerDay * selectedDays).toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between text-muted-foreground">
+                      <span>
+                        {accommodationOptions.find((a) => a.id === accommodation)?.label} (x
+                        {accommodationOptions.find((a) => a.id === accommodation)?.multiplier})
+                      </span>
+                      <span>
+                        ₹{Math.round(basePricePerDay * selectedDays * (accommodationOptions.find((a) => a.id === accommodation)?.multiplier || 1)).toLocaleString()}
+                      </span>
+                    </div>
+                    {addons.length > 0 && (
+                      <div className="flex justify-between text-muted-foreground">
+                        <span>Add-ons</span>
+                        <span>
+                          +₹{addons.reduce((sum, addonId) => {
+                            const addon = addonsOptions.find((a) => a.id === addonId);
+                            if (!addon) return sum;
+                            return sum + (addon.oneTime ? addon.price : addon.pricePerDay * selectedDays);
+                          }, 0).toLocaleString()}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex justify-between items-end mt-4 pt-4 border-t border-border">
+                    <span className="text-foreground font-semibold">Total Price</span>
+                    <div className="text-right">
+                      <p className="text-3xl font-bold text-primary">
+                        ₹{totalPrice.toLocaleString()}
+                      </p>
+                      <span className="text-xs text-muted-foreground">per person</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Book Now Button */}
+                <Button
+                  variant="gradient"
+                  size="xl"
+                  className="w-full"
+                  onClick={() => setIsBookingOpen(true)}
+                >
+                  Book Now
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+
+      <BookingModal
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+        destination={{ title: destination.title, price: totalPrice }}
+      />
+    </main>
+  );
+};
+
+export default DestinationDetail;
