@@ -120,29 +120,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="text-primary font-medium">The Dreamers</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2">
-              Meet Our Team
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {team.map((member, index) => (
-              <div key={index} className="text-center">
-                <div className="w-24 h-24 rounded-full bg-sunset text-secondary-foreground flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {member.avatar}
-                </div>
-                <h3 className="font-semibold text-foreground">{member.name}</h3>
-                <p className="text-muted-foreground text-sm">{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Team section removed */}
 
       <Footer />
     </main>
