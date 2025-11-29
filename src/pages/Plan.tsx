@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import BookingModal from "@/components/BookingModal";
 import { destinations } from "@/data/destinations";
 
 const THEMES = [
@@ -22,6 +23,7 @@ const Plan = () => {
   const [month, setMonth] = useState("");
   const [selectedDestinationId, setSelectedDestinationId] = useState<string>(destinations[0]?.id || "");
   const [itinerary, setItinerary] = useState<string[] | null>(null);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   const toggleTheme = (theme: string) => {
     setSelectedThemes((prev) =>
@@ -148,6 +150,14 @@ const Plan = () => {
                           Math.max(0, Math.round((selectedDestination.price / Math.max(1, parseBaseDays(selectedDestination.duration))) * days)).toLocaleString()
                         }
                       </div>
+                        <div className="mt-3">
+                          <Button
+                            variant="sunset"
+                            onClick={() => setIsBookingOpen(true)}
+                          >
+                            Book
+                          </Button>
+                        </div>
                     </div>
                   </div>
                 ) : null}
@@ -171,6 +181,12 @@ const Plan = () => {
       </section>
 
       <Footer />
+
+      <BookingModal
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+        destination={selectedDestination ? { title: selectedDestination.title, price: selectedDestination.price } : undefined}
+      />
     </main>
   );
 };

@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { useParams, useNavigate, Link, useSearchParams, useLocation } from "react-router-dom";
-import { ArrowLeft, MapPin, Star, Clock, Check } from "lucide-react";
+import { ArrowLeft, MapPin, Star, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -149,10 +149,6 @@ const DestinationDetail = () => {
               <div className="flex items-center gap-1">
                 <Star className="h-5 w-5 text-sunset fill-sunset" />
                 <span className="font-medium">{destination.rating}</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <Clock className="h-5 w-5" />
-                <span>{destination.duration}</span>
               </div>
             </div>
           </div>

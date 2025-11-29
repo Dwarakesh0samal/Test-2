@@ -67,13 +67,7 @@ const DestinationCard = ({
           {description}
         </p>
 
-        {/* Details */}
-        <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
-          <div className="flex items-center gap-1.5">
-            <Clock className="h-4 w-4 text-primary" />
-            <span>{duration}</span>
-          </div>
-        </div>
+        {/* Details (duration removed as requested) */}
 
         {/* Price & Button */}
         <div className="flex items-center justify-between pt-4 border-t border-border">

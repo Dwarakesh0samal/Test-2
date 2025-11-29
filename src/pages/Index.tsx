@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, MapPin, Users, Award, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
@@ -12,6 +12,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 const Index = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedDestination, setSelectedDestination] = useState<typeof destinations[0] | null>(null);
+  const navigate = useNavigate();
 
   const handleBook = (id: string) => {
     const dest = destinations.find((d) => d.id === id);
@@ -66,7 +67,7 @@ const Index = () => {
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
-              <Button variant="hero" size="xl" onClick={() => setIsBookingOpen(true)}>
+              <Button variant="hero" size="xl" onClick={() => navigate('/plan')}>
                 Plan Your Trip
               </Button>
             </div>
@@ -199,7 +200,7 @@ const Index = () => {
           <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
             Join thousands of happy travelers who have discovered their dream destinations with us.
           </p>
-          <Button variant="hero" size="xl" onClick={() => setIsBookingOpen(true)}>
+          <Button variant="hero" size="xl" onClick={() => navigate('/plan')}>
             Book Your Trip Now
           </Button>
         </div>
