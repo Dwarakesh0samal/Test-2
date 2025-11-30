@@ -146,7 +146,7 @@ const DestinationDetail = () => {
         Events & Festivals
       </h2>
       <p className="text-muted-foreground">
-        Experience the vibrant culture and celebrations of {destination.title}.
+        Discover the vibrant culture and celebrations of {destination.title}.
       </p>
       <div className="space-y-6">
         {content?.events?.map((event, index) => (
@@ -231,7 +231,7 @@ const DestinationDetail = () => {
         Wellness & Spa
       </h2>
       <p className="text-muted-foreground leading-relaxed text-lg">
-        {content?.wellness || `Rejuvenating wellness treatments and spa experiences in ${destination.title}. From traditional therapies to modern wellness retreats, find your path to relaxation and renewal.`}
+        {content?.wellness || `Rejuvenating wellness treatments and spa services in ${destination.title}. From traditional therapies to modern wellness retreats, find your path to relaxation and renewal.`}
       </p>
       <div className="grid sm:grid-cols-2 gap-6">
         <div className="bg-card rounded-xl border border-border p-6">
