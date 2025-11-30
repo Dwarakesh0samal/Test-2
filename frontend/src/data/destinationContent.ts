@@ -167,7 +167,7 @@ export const destinationContent: Record<string, DestinationContent> = {
     ],
   },
   "temple-trail": {
-    overview: "India's temple trail offers a spiritual journey through some of the world's most sacred sites. From the ghats of Varanasi to the temples of Tamil Nadu, experience divine architecture, ancient rituals, and profound spirituality.",
+    overview: "India's temple trail offers a spiritual journey through some of the world's most sacred sites. From the ghats of Varanasi to the temples of Tamil Nadu, witness divine architecture, ancient rituals, and profound spirituality.",
     food: [
       { name: "Temple Prasad", image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400", description: "Sacred food offerings from various temples", mustTry: true },
       { name: "Sattvic Meals", image: "https://images.unsplash.com/photo-1567337710282-00832b415979?w=400", description: "Pure vegetarian cuisine following spiritual principles", mustTry: true },
@@ -187,11 +187,11 @@ export const destinationContent: Record<string, DestinationContent> = {
     ],
   },
   "kerala-cuisine": {
-    overview: "Kerala's cuisine is a symphony of coconut, spices, and fresh seafood. Experience the flavors that make this region a culinary destination with cooking classes, spice plantation visits, and authentic food trails.",
+    overview: "Kerala's cuisine is a symphony of coconut, spices, and fresh seafood. Savor the flavors that make this region a culinary destination with cooking classes, spice plantation visits, and authentic food trails.",
     food: [
       { name: "Sadya Feast", image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400", description: "Grand vegetarian feast with 26+ dishes on banana leaf", mustTry: true },
       { name: "Malabar Biryani", image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400", description: "Fragrant rice dish unique to the Malabar coast", mustTry: true },
-      { name: "Toddy Shop Experience", image: "https://images.unsplash.com/photo-1567337710282-00832b415979?w=400", description: "Traditional Kerala meals with palm toddy", mustTry: true },
+      { name: "Toddy Shop Dining", image: "https://images.unsplash.com/photo-1567337710282-00832b415979?w=400", description: "Traditional Kerala meals with palm toddy", mustTry: true },
     ],
     hotels: [
       { name: "Brunton Boatyard", image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400", rating: 4.8, priceRange: "₹15,000 - ₹30,000", description: "Heritage hotel in Fort Kochi known for exceptional cuisine", website: "https://www.cghearth.com" },
@@ -205,7 +205,7 @@ export const destinationContent: Record<string, DestinationContent> = {
     ],
   },
   "filming-locations": {
-    overview: "From the dramatic landscapes of Ladakh to the beaches of Goa, explore the iconic locations that have captured filmmakers' imaginations. Visit spots from Bollywood blockbusters and international productions.",
+    overview: "From the dramatic landscapes of Ladakh to the beaches of Goa, discover the iconic locations that have captured filmmakers' imaginations. Visit spots from Bollywood blockbusters and international productions.",
     food: [
       { name: "Movie Set Cafe", image: "https://images.unsplash.com/photo-1567337710282-00832b415979?w=400", description: "Themed cafes at popular filming locations", mustTry: false },
     ],
