@@ -43,7 +43,7 @@ export interface DestinationContent {
 
 export const destinationContent: Record<string, DestinationContent> = {
   kerala: {
-    overview: "Kerala, known as God's Own Country, offers a unique blend of serene backwaters, lush hill stations, and rich cultural heritage. From the tranquil houseboats of Alleppey to the misty peaks of Munnar, every moment is magical. Experience traditional Kathakali performances, savor authentic cuisine, and rejuvenate with Ayurvedic treatments.",
+    overview: "Kerala, known as God's Own Country, offers a unique blend of serene backwaters, lush hill stations, and rich cultural heritage. From the tranquil houseboats of Alleppey to the misty peaks of Munnar, every moment is magical. Enjoy traditional Kathakali performances, savor authentic cuisine, and rejuvenate with Ayurvedic treatments.",
     food: [
       { name: "Appam with Stew", image: "https://images.unsplash.com/photo-1630383249896-424e482df921?w=400", description: "Soft, fluffy rice pancakes served with coconut milk-based vegetable or chicken stew", mustTry: true },
       { name: "Karimeen Pollichathu", image: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=400", description: "Pearl spot fish marinated in spices, wrapped in banana leaf and grilled to perfection", mustTry: true },
@@ -67,10 +67,10 @@ export const destinationContent: Record<string, DestinationContent> = {
       { days: 5, title: "Backwater Bliss", image: "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=400", highlights: ["Alleppey Houseboat", "Kumarakom Bird Sanctuary", "Ayurvedic Spa", "Cooking Class", "Fort Kochi"], price: 25999 },
       { days: 7, title: "Complete Kerala", image: "https://images.unsplash.com/photo-1609340583496-8b5f0f1e69b4?w=400", highlights: ["Munnar Hills", "Thekkady Wildlife", "Alleppey Backwaters", "Kovalam Beach", "Ayurvedic Retreat", "Cultural Shows"], price: 35999 },
     ],
-    wellness: "Kerala is the birthplace of Ayurveda. Experience traditional Panchakarma treatments, yoga retreats in serene ashrams, meditation sessions by the backwaters, and rejuvenating spa therapies at certified wellness centers throughout the state.",
+    wellness: "Kerala is the birthplace of Ayurveda. Enjoy traditional Panchakarma treatments, yoga retreats in serene ashrams, meditation sessions by the backwaters, and rejuvenating spa therapies at certified wellness centers throughout the state.",
   },
   andaman: {
-    overview: "The Andaman Islands offer pristine beaches, turquoise waters, and some of the best diving spots in Asia. Explore untouched nature, historical sites like Cellular Jail, and vibrant marine life. Perfect for beach lovers, adventure seekers, and those seeking tropical paradise.",
+    overview: "The Andaman Islands offer pristine beaches, turquoise waters, and some of the best diving spots in Asia. Discover untouched nature, historical sites like Cellular Jail, and vibrant marine life. Perfect for beach lovers, adventure seekers, and those seeking tropical paradise.",
     food: [
       { name: "Grilled Lobster", image: "https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=400", description: "Fresh lobster grilled with local spices and served with coconut rice", mustTry: true },
       { name: "Fish Curry", image: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=400", description: "Traditional fish curry made with fresh catch and coconut milk", mustTry: true },
