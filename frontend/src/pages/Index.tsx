@@ -23,7 +23,7 @@ const Index = () => {
   const stats = [
     { icon: MapPin, value: "50+", label: "Destinations" },
     { icon: Users, value: "10K+", label: "Happy Travelers" },
-    { icon: Award, value: "15+", label: "Years Experience" },
+    { icon: Award, value: "15+", label: "Years in Business" },
     { icon: Compass, value: "100+", label: "Tour Packages" },
   ];
 
@@ -52,7 +52,7 @@ const Index = () => {
         <div className="relative z-20 container mx-auto px-4 pt-20 text-center">
           <div className="max-w-4xl mx-auto animate-fade-up">
             <span className="inline-block px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm text-primary-foreground text-sm font-medium mb-6">
-              ✈️ Explore India's Hidden Gems
+              ✈️ Discover India's Hidden Gems
             </span>
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-background mb-6 leading-tight">
               Turn Your <span className="text-sunset">Travel Dreams</span> Into Reality
@@ -63,12 +63,12 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/destinations">
                 <Button variant="gradient" size="xl" className="group">
-                  Explore Destinations
+                  View Destinations
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
               <Button variant="hero" size="xl" onClick={() => navigate('/plan')}>
-                Plan Your Trip
+                Book Your Trip
               </Button>
             </div>
           </div>
@@ -108,7 +108,7 @@ const Index = () => {
               Discover Amazing Places
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              From serene backwaters to majestic mountains, explore our handpicked destinations for your next adventure.
+              From serene backwaters to majestic mountains, discover our handpicked destinations for your next adventure.
             </p>
           </div>
 
@@ -146,7 +146,7 @@ const Index = () => {
               </h2>
               <div className="space-y-6">
                 {[
-                  { title: "Expert Local Guides", desc: "Our experienced guides ensure authentic experiences at every destination." },
+                  { title: "Expert Local Guides", desc: "Our knowledgeable guides ensure authentic adventures at every destination." },
                   { title: "Customized Itineraries", desc: "Every trip is tailored to your preferences, budget, and travel style." },
                   { title: "24/7 Support", desc: "Round-the-clock assistance ensures you're never alone on your journey." },
                   { title: "Best Price Guarantee", desc: "We offer competitive pricing without compromising on quality." },
