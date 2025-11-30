@@ -78,8 +78,8 @@ const Contact = () => {
                 Let's Start a Conversation
               </h2>
               <p className="text-muted-foreground mb-8">
-                Whether you're planning your first trip or your hundredth, our
-                team is ready to help you create an unforgettable experience.
+                Whether it's your first trip or your hundredth, our
+                team is ready to help you create an unforgettable journey.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-6">
@@ -168,7 +168,7 @@ const Contact = () => {
                   </Label>
                   <Textarea
                     id="message"
-                    placeholder="Tell us about your travel plans..."
+                    placeholder="Tell us about your travel ideas..."
                     rows={5}
                     value={formData.message}
                     onChange={(e) =>
