@@ -61,7 +61,7 @@ const Contact = () => {
               Contact Us
             </h1>
             <p className="text-muted-foreground text-lg">
-              Have questions about your next adventure? We're here to help you plan 
+              Have questions about your next adventure? We're here to help you
               the perfect trip.
             </p>
           </div>
@@ -78,8 +78,8 @@ const Contact = () => {
                 Let's Start a Conversation
               </h2>
               <p className="text-muted-foreground mb-8">
-                Whether you're planning your first trip or your hundredth, our team is ready 
-                to help you create an unforgettable experience.
+                Whether you're planning your first trip or your hundredth, our
+                team is ready to help you create an unforgettable experience.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-6">
@@ -92,7 +92,9 @@ const Contact = () => {
                       <div className="p-2 rounded-lg bg-ocean-light">
                         <item.icon className="h-5 w-5 text-ocean" />
                       </div>
-                      <h3 className="font-semibold text-foreground">{item.title}</h3>
+                      <h3 className="font-semibold text-foreground">
+                        {item.title}
+                      </h3>
                     </div>
                     <div className="space-y-1">
                       {item.details.map((detail, i) => (
@@ -115,52 +117,73 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-foreground">Your Name</Label>
+                    <Label htmlFor="name" className="text-foreground">
+                      Your Name
+                    </Label>
                     <Input
                       id="name"
                       placeholder="John Doe"
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-foreground">Email Address</Label>
+                    <Label htmlFor="email" className="text-foreground">
+                      Email Address
+                    </Label>
                     <Input
                       id="email"
                       type="email"
                       placeholder="john@example.com"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       required
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="subject" className="text-foreground">Subject</Label>
+                  <Label htmlFor="subject" className="text-foreground">
+                    Subject
+                  </Label>
                   <Input
                     id="subject"
                     placeholder="How can we help?"
                     value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, subject: e.target.value })
+                    }
                     required
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-foreground">Message</Label>
+                  <Label htmlFor="message" className="text-foreground">
+                    Message
+                  </Label>
                   <Textarea
                     id="message"
                     placeholder="Tell us about your travel plans..."
                     rows={5}
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                     required
                   />
                 </div>
 
-                <Button type="submit" variant="gradient" size="lg" className="w-full group">
+                <Button
+                  type="submit"
+                  variant="gradient"
+                  size="lg"
+                  className="w-full group"
+                >
                   Send Message
                   <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { MapPin, Star, Clock } from "lucide-react";
+import { MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface DestinationCardProps {
@@ -9,7 +9,6 @@ interface DestinationCardProps {
   description: string;
   image: string;
   price: number;
-  duration: string;
   rating: number;
   onBook: (id: string) => void;
 }
@@ -21,7 +20,6 @@ const DestinationCard = ({
   description,
   image,
   price,
-  duration,
   rating,
   onBook,
 }: DestinationCardProps) => {
@@ -66,8 +64,6 @@ const DestinationCard = ({
         <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
           {description}
         </p>
-
-        {/* Details (duration removed as requested) */}
 
         {/* Price & Button */}
         <div className="flex items-center justify-between pt-4 border-t border-border">

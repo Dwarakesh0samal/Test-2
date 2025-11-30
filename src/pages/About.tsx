@@ -22,7 +22,7 @@ const About = () => {
     },
     {
       icon: Sparkles,
-      title: "Unforgettable Experiences",
+      title: "Unforgettable Moments",
       description: "We create moments that become cherished memories lasting a lifetime.",
     },
   ];
