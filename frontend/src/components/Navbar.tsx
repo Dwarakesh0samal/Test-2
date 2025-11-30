@@ -48,67 +48,6 @@ const Navbar = () => {
               Home
             </Link>
 
-            <NavigationMenu>
-              <NavigationMenuList>
-                {/* EXPLORE Menu */}
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-foreground bg-transparent">
-                    Explore
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[400px] p-4 bg-card/95 backdrop-blur-md rounded-2xl shadow-xl border border-border">
-                      <h3 className="font-display text-lg font-semibold text-foreground mb-3 px-3">
-                        Explore Destinations
-                      </h3>
-                      <div className="grid gap-1">
-                        {EXPLORE_MENU.map((item) => (
-                          <MegaMenuCard key={item.label} {...item} />
-                        ))}
-                      </div>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                {/* EXPERIENCE Menu */}
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-foreground bg-transparent">
-                    Experience
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[400px] p-4 bg-card/95 backdrop-blur-md rounded-2xl shadow-xl border border-border">
-                      <h3 className="font-display text-lg font-semibold text-foreground mb-3 px-3">
-                        Unique Experiences
-                      </h3>
-                      <div className="grid gap-1">
-                        {EXPERIENCE_MENU.map((item) => (
-                          <MegaMenuCard key={item.label} {...item} />
-                        ))}
-                      </div>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                {/* PLAN Menu */}
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-sm font-medium text-muted-foreground hover:text-foreground bg-transparent">
-                    Plan
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[400px] p-4 bg-card/95 backdrop-blur-md rounded-2xl shadow-xl border border-border">
-                      <h3 className="font-display text-lg font-semibold text-foreground mb-3 px-3">
-                        Plan Your Trip
-                      </h3>
-                      <div className="grid gap-1">
-                        {PLAN_MENU.map((item) => (
-                          <MegaMenuCard key={item.label} {...item} />
-                        ))}
-                      </div>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-
             <Link
               to="/destinations"
               className={cn(
