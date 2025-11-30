@@ -33,7 +33,7 @@ const Destinations = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Explore Our Destinations
+              Our Destinations
             </h1>
             <p className="text-muted-foreground text-lg mb-8">
               From tranquil backwaters to thrilling mountain adventures, find your perfect getaway.
