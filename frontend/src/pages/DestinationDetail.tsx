@@ -319,25 +319,6 @@ const DestinationDetail = () => {
         </div>
       </section>
 
-      {/* Tab Navigation */}
-      <section className="py-6 border-b border-border bg-card sticky top-16 md:top-20 z-40">
-        <div className="container mx-auto px-4">
-          <Tabs value={activeTab} onValueChange={setActiveTab}>
-            <TabsList className="w-full justify-start gap-2 bg-transparent h-auto flex-wrap">
-              {availableTabs.map((tab) => (
-                <TabsTrigger
-                  key={tab.id}
-                  value={tab.id}
-                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground px-4 py-2 rounded-full"
-                >
-                  {tab.label}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-          </Tabs>
-        </div>
-      </section>
-
       {/* Content */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
