@@ -95,7 +95,7 @@ export const destinationContent: Record<string, DestinationContent> = {
     ],
   },
   ladakh: {
-    overview: "Ladakh, the land of high passes, offers breathtaking landscapes, ancient Buddhist monasteries, and adventure at every turn. Experience the raw beauty of the Himalayas, serene lakes, and a unique Tibetan-influenced culture that will leave you spellbound.",
+    overview: "Ladakh, the land of high passes, offers breathtaking landscapes, ancient Buddhist monasteries, and adventure at every turn. Discover the raw beauty of the Himalayas, serene lakes, and a unique Tibetan-influenced culture that will leave you spellbound.",
     food: [
       { name: "Momos", image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400", description: "Tibetan dumplings filled with meat or vegetables, served with spicy chutney", mustTry: true },
       { name: "Thukpa", image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400", description: "Hearty noodle soup perfect for the cold climate", mustTry: true },
@@ -105,7 +105,7 @@ export const destinationContent: Record<string, DestinationContent> = {
     hotels: [
       { name: "The Grand Dragon", image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400", rating: 4.8, priceRange: "₹15,000 - ₹30,000", description: "Premium hotel in Leh with stunning mountain views and modern amenities", website: "https://www.thegranddragonladakh.com" },
       { name: "Pangong Lake Camp", image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=400", rating: 4.6, priceRange: "₹8,000 - ₹15,000", description: "Luxury camping by the stunning blue Pangong Lake", website: "https://www.ladakhtourism.com" },
-      { name: "Stok Palace Heritage", image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400", rating: 4.7, priceRange: "₹12,000 - ₹25,000", description: "Stay in a 200-year-old royal palace with authentic Ladakhi experience", website: "https://www.stokpalace.com" },
+      { name: "Stok Palace Heritage", image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400", rating: 4.7, priceRange: "₹12,000 - ₹25,000", description: "Stay in a 200-year-old royal palace with authentic Ladakhi hospitality", website: "https://www.stokpalace.com" },
       { name: "Nubra Eco Lodge", image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400", rating: 4.5, priceRange: "₹6,000 - ₹12,000", description: "Eco-friendly camp in Nubra Valley with double-humped camel safaris", website: "https://www.ladakhtourism.com" },
     ],
     events: [
@@ -142,12 +142,12 @@ export const destinationContent: Record<string, DestinationContent> = {
     ],
     itineraries: [
       { days: 3, title: "Goa Getaway", image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=400", highlights: ["North Goa Beaches", "Fort Aguada", "Night Markets", "Beach Parties"], price: 12999 },
-      { days: 5, title: "Goa Explorer", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400", highlights: ["North & South Beaches", "Old Goa Churches", "Spice Plantation", "Dudhsagar Falls", "Water Sports"], price: 19999 },
-      { days: 7, title: "Complete Goa", image: "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=400", highlights: ["All Beaches", "Heritage Tour", "Adventure Sports", "Nightlife Experience", "Cooking Class", "Island Trip", "Casino Night"], price: 28999 },
+      { days: 5, title: "Goa Discovery", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400", highlights: ["North & South Beaches", "Old Goa Churches", "Spice Plantation", "Dudhsagar Falls", "Water Sports"], price: 19999 },
+      { days: 7, title: "Complete Goa", image: "https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=400", highlights: ["All Beaches", "Heritage Tour", "Adventure Sports", "Nightlife", "Cooking Class", "Island Trip", "Casino Night"], price: 28999 },
     ],
   },
   "heritage-trails": {
-    overview: "India's heritage trails take you through millennia of history, from ancient temples to Mughal monuments, showcasing architectural marvels and cultural treasures. Walk through UNESCO World Heritage sites, explore royal palaces, and discover stories that shaped civilizations.",
+    overview: "India's heritage trails take you through millennia of history, from ancient temples to Mughal monuments, showcasing architectural marvels and cultural treasures. Walk through UNESCO World Heritage sites, visit royal palaces, and discover stories that shaped civilizations.",
     food: [
       { name: "Royal Thali", image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400", description: "Traditional multi-course meal served in heritage style", mustTry: true },
       { name: "Street Food Trail", image: "https://images.unsplash.com/photo-1567337710282-00832b415979?w=400", description: "Local delicacies unique to each heritage city", mustTry: true },
