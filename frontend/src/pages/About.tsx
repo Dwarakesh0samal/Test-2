@@ -48,7 +48,7 @@ const About = () => {
             </h1>
             <p className="text-muted-foreground text-lg">
               Born from a love of exploration and a desire to share India's incredible beauty with the world, 
-              we've been crafting unforgettable travel experiences since 2009.
+              we've been crafting unforgettable journeys since 2009.
             </p>
           </div>
         </div>
@@ -76,12 +76,12 @@ const About = () => {
               </h2>
               <p className="text-muted-foreground mb-4">
                 At Destination Dreamers, we believe that travel has the power to transform lives. Our mission 
-                is to make extraordinary travel experiences accessible to everyone, creating journeys that 
+                is to make extraordinary journeys accessible to everyone, creating adventures that 
                 inspire, educate, and connect people with the wonders of our diverse world.
               </p>
               <p className="text-muted-foreground">
                 We work closely with local communities, support sustainable tourism practices, and ensure 
-                that every trip we plan contributes positively to both our travelers and the destinations 
+                that every trip contributes positively to both our travelers and the destinations 
                 they visit.
               </p>
             </div>
