@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useParams, Link, useSearchParams, useLocation } from "react-router-dom";
 import { ArrowLeft, MapPin, Star, Clock, Check, ExternalLink, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import DestinationNavbar from "@/components/DestinationNavbar";
 import Footer from "@/components/Footer";
 import { destinations } from "@/data/destinations";
