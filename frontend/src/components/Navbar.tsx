@@ -1,18 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Plane, ChevronDown } from "lucide-react";
+import { Menu, X, Plane } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import MegaMenuCard from "@/components/nav/MegaMenuCard";
 import MobileNavMenu from "@/components/nav/MobileNavMenu";
-import { EXPLORE_MENU, EXPERIENCE_MENU, PLAN_MENU } from "@/data/navigationData";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
