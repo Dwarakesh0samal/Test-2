@@ -117,14 +117,14 @@ export const destinations: Destination[] = [
     id: "kerala-cuisine",
     title: "Kerala Cuisine Tour",
     subtitle: "Flavors of God's Own Country",
-    description: "Savor the authentic tastes of Kerala through cooking classes, spice plantation visits, and culinary experiences across this foodie paradise.",
+    description: "Savor the authentic tastes of Kerala through cooking classes, spice plantation visits, and culinary adventures across this foodie paradise.",
     image: keralaImg,
     price: 19999,
     duration: "4 Days / 3 Nights",
     rating: 4.8,
     highlights: ["Cooking Classes", "Spice Gardens", "Toddy Shops", "Seafood Feasts"],
     sections: [
-      { id: "overview", title: "Overview", content: "Kerala's cuisine is a symphony of coconut, spices, and fresh seafood. Experience the flavors that make this region a culinary destination." },
+      { id: "overview", title: "Overview", content: "Kerala's cuisine is a symphony of coconut, spices, and fresh seafood. Savor the flavors that make this region a culinary destination." },
       { id: "accommodation", title: "Accommodation", content: "Stay at properties known for their exceptional cuisine, from heritage hotels to homestays where meals are the highlight." },
     ],
   },
@@ -139,8 +139,8 @@ export const destinations: Destination[] = [
     rating: 4.6,
     highlights: ["Bollywood Sites", "Scenic Backdrops", "Studio Tours", "Photography Spots"],
     sections: [
-      { id: "overview", title: "Overview", content: "From the dramatic landscapes of Ladakh to the beaches of Goa, explore the iconic locations that have captured filmmakers' imaginations." },
-      { id: "accommodation", title: "Accommodation", content: "Stay at properties featured in films or near famous shooting locations for the ultimate cinematic experience." },
+      { id: "overview", title: "Overview", content: "From the dramatic landscapes of Ladakh to the beaches of Goa, discover the iconic locations that have captured filmmakers' imaginations." },
+      { id: "accommodation", title: "Accommodation", content: "Stay at properties featured in films or near famous shooting locations for the ultimate cinematic journey." },
     ],
   },
 ];
