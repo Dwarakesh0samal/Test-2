@@ -1,4 +1,4 @@
-# Here are your Instructions
+# Here are your Instructions:
 This repository contains a frontend (Vite + React) in the `frontend/` folder and a FastAPI backend in the `backend/` folder. Below are quick commands to run the project locally.
 
 ## Prerequisites
